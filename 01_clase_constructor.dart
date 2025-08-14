@@ -3,10 +3,7 @@ void main() {
   Persona p = new Persona('william', 'marrugo', 21, 123456789,'nose@gmail.com');
   Animal a = new Animal(raza:'perro',propietario:'william',fecha_nacimiento:'01/01/01', vacunas:200);
   
-  @override
-  String toString() {
-    return 'este es un mensaje personalizado';
-  }
+  
 
 }
 
@@ -27,6 +24,11 @@ class Persona{
     this.email = email;
   }
   
+  @override
+  String toString() {
+    return 'este es un mensaje personalizado';
+  }
+  
 }
 
 
@@ -40,4 +42,10 @@ class Animal{
   Animal({required this.raza, required this.propietario, required this.fecha_nacimiento, required this.vacunas}){
     print('este perro pertenece a '+ propietario);
   }
+  
+  @override
+  String toString() {
+    return 'este es un mensaje personalizado';
+  }
+  
 }
