@@ -1,0 +1,43 @@
+void main() {
+  
+  
+  final per = new Persona(nombre: 'william', apellido: 'marrugo', edad: 50);
+  
+  print(per.nombre);
+  
+  final Map<String, dynamic> ApiData = {
+    'nombre': 'ivan',
+    'apellido': 'navaez',
+    'edad': 42,
+  };
+
+  final api2 = Persona.ApiData(ApiData);
+
+  print(api2);
+  
+}
+
+class Persona{
+  String nombre;
+  String apellido;
+  int edad;
+  
+  Persona({required this.nombre, required this.apellido, required this.edad})
+    : assert(
+       edad >= 18, 'eres mayor de edad');
+          
+    
+        
+  
+  
+  Persona.ApiData(Map<String, dynamic> data)
+      : nombre = data['nombre'] ?? 'No nombre found', 
+        apellido = data['apellido'] ?? 'No apellido found',
+        edad = data['edad'] ?? 'No edad found';
+  
+  
+  @override
+  String toString() {
+    return '$nombre, $apellido, $edad: ${edad>=20 ? 'Eres mayor!' : 'Menor de Edad'}'; 
+  }
+}
